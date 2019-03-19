@@ -64,8 +64,8 @@ def main(cost_func, bounds, popsize, mutate, recombination, maxiter):
 
     # cycle through each generation (step #2)
     for i in range(1,maxiter+1):
-        print 'GENERATION:',i
-
+        print ("GENERATION:",i)
+        #print(population)
         gen_scores = [] # score keeping
 
         # cycle through each individual in the population
@@ -74,7 +74,7 @@ def main(cost_func, bounds, popsize, mutate, recombination, maxiter):
             #--- MUTATION (step #3.A) ---------------------+
             
             # select three random vector index positions [0, popsize), not including current vector (j)
-            canidates = range(0,popsize)
+            canidates = list(range(0,popsize))
             canidates.remove(j)
             random_index = random.sample(canidates, 3)
 
@@ -109,10 +109,10 @@ def main(cost_func, bounds, popsize, mutate, recombination, maxiter):
             if score_trial < score_target:
                 population[j] = v_trial
                 gen_scores.append(score_trial)
-                print '   >',score_trial, v_trial
+                print( '   >',score_trial, v_trial)
 
             else:
-                print '   >',score_target, x_t
+                print( '   >',score_target, x_t)
                 gen_scores.append(score_target)
 
         #--- SCORE KEEPING --------------------------------+
@@ -121,9 +121,10 @@ def main(cost_func, bounds, popsize, mutate, recombination, maxiter):
         gen_best = min(gen_scores)                                  # fitness of best individual
         gen_sol = population[gen_scores.index(min(gen_scores))]     # solution of best individual
 
-        print '      > GENERATION AVERAGE:',gen_avg
-        print '      > GENERATION BEST:',gen_best
-        print '         > BEST SOLUTION:',gen_sol,'\n'
+        print ('      > GENERATION AVERAGE:',gen_avg)
+        print ('      > GENERATION BEST:',gen_best)
+        print ('         > BEST SOLUTION:',gen_sol,'\n')
+
 
     return gen_sol
 
@@ -139,5 +140,3 @@ maxiter = 20                        # Max number of generations (maxiter)
 #--- RUN ----------------------------------------------------------------------+
 
 main(cost_func, bounds, popsize, mutate, recombination, maxiter)
-
-#--- END ----------------------------------------------------------------------+
