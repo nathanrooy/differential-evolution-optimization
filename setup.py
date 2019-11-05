@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='pso',
+    name='diffevo',
     version='0.0.1',
     author='Nathan A. Rooy',
     author_email='nathanrooy@gmail.com',
