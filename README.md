@@ -19,11 +19,11 @@ Next, you need to specify a cost fucntion. I included the sphere function for ex
 Lastly we need to specify some optimizer specific constants. For more information on what these values are and how best to use them, see the linked blog post at the top of this page.
 
 ```py
->>> bounds = [(-1,1),(-1,1)]            # Bounds [(x1_min, x1_max), (x2_min, x2_max),...]
->>> popsize = 10                        # Population size, must be >= 4
->>> mutate = 0.5                        # Mutation factor [0,2]
->>> recombination = 0.7                 # Recombination rate [0,1]
->>> maxiter = 20                        # Max number of generations (maxiter)
+>>> bounds = [(-1,1),(-1,1)]            # bounds [(x1_min, x1_max), (x2_min, x2_max),...]
+>>> popsize = 10                        # population size, must be >= 4
+>>> mutate = 0.5                        # mutation factor [0,2]
+>>> recombination = 0.7                 # recombination rate [0,1]
+>>> maxiter = 20                        # max number of generations
 ```
 Now, let's minimize this!
 ```py
