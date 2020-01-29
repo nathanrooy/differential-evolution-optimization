@@ -63,9 +63,9 @@ def minimize(cost_func, bounds, popsize, mutate, recombination, maxiter):
             #--- MUTATION (step #3.A) ---------------------+
             
             # select three random vector index positions [0, popsize), not including current vector (j)
-            canidates = list(range(0,popsize))
-            canidates.remove(j)
-            random_index = sample(canidates, 3)
+            candidates = list(range(0,popsize))
+            candidates.remove(j)
+            random_index = sample(candidates, 3)
 
             x_1 = population[random_index[0]]
             x_2 = population[random_index[1]]
